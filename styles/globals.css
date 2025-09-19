@@ -2,36 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === Base Reset === */
+/* ===============================
+   🌌 Gold Aero Modern Theme
+   - Dark + Light
+   - Effetti glassmorphism / aero
+   - Palette: Nero, Panna, Oro, Blu, Rosso, Cipria
+   =============================== */
+
+/* === Reset Base === */
 html, body {
   @apply font-sans antialiased transition-colors duration-700;
-  background: radial-gradient(circle at 30% 20%, #0d0d0d, #050505 80%);
-  color: #f4f4f5;
   scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+/* === Theme Tokens (CSS Variables) === */
+:root {
+  --bg: #fdfdfb;             /* panna */
+  --text: #111;
+  --gold: #facc15;
+  --gold-2: #fde047;
+  --blue: #3aa0e0;
+  --red: #7a1d27;
+  --cipria: #e9c7c9;
+  --glass: rgba(255,255,255,0.55);
+  --border: rgba(0,0,0,0.08);
+  --shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+.dark {
+  --bg: #050505;             /* nero profondo */
+  --text: #f4f4f5;
+  --gold: #fbbf24;
+  --gold-2: #facc15;
+  --blue: #69c3ff;
+  --red: #c32f3e;
+  --cipria: #d8aab0;
+  --glass: rgba(20,20,30,0.55);
+  --border: rgba(255,255,255,0.08);
+  --shadow: 0 10px 40px rgba(0,0,0,0.65);
+}
+
+/* === Backgrounds === */
+body {
+  background:
+    radial-gradient(1000px 600px at 20% 10%, rgba(250,204,21,0.08), transparent 60%),
+    radial-gradient(800px 500px at 80% 20%, rgba(58,160,224,0.10), transparent 60%),
+    radial-gradient(700px 400px at 50% 90%, rgba(233,199,201,0.08), transparent 60%),
+    var(--bg);
+  color: var(--text);
 }
 
 /* === Tipografia === */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", serif;
   font-weight: 700;
-  @apply tracking-tight;
-  background: linear-gradient(135deg, #facc15, #fde047);
+  background: linear-gradient(135deg, var(--gold-2), var(--gold));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  @apply tracking-tight;
 }
 p {
   @apply leading-relaxed text-base;
-  color: rgba(240, 240, 240, 0.85);
+  color: color-mix(in srgb, var(--text) 85%, transparent);
 }
 a {
   @apply transition-colors duration-300;
-  color: #22c55e;
+  color: var(--blue);
 }
 a:hover {
-  color: #facc15;
+  color: var(--gold);
 }
 
-/* === Layout Container === */
+/* === Container === */
 .container {
   @apply max-w-6xl mx-auto px-6;
 }
@@ -39,76 +82,61 @@ a:hover {
 /* === Header === */
 header {
   @apply sticky top-0 z-50 flex items-center justify-between;
-  height: 72px;
-  background: rgba(8, 8, 8, 0.75);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  height: 76px;
+  background: color-mix(in srgb, var(--glass) 85%, transparent);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  transition: all 0.3s ease;
   padding: 0 2rem;
-  transition: all 0.4s ease;
 }
 header:hover {
-  background: rgba(15, 15, 15, 0.85);
-  border-color: rgba(255,255,255,0.15);
+  border-color: var(--gold);
 }
 
-/* === Pulsanti Moderni === */
+/* === Pulsanti === */
 .btn {
-  @apply inline-block px-7 py-2.5 font-medium shadow-lg transition-all duration-500;
-  border-radius: 9999px; /* pill shape */
-  letter-spacing: 0.02em;
+  @apply inline-flex items-center justify-center gap-2 px-6 py-2.5 font-medium rounded-full transition-all duration-500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 .btn-primary {
-  background: linear-gradient(135deg, #facc15, #fbbf24);
+  background: linear-gradient(135deg, var(--gold), var(--gold-2));
   color: #111;
-  box-shadow: 0 4px 16px rgba(250, 204, 21, 0.35);
+  box-shadow: 0 6px 20px rgba(250,204,21,0.35);
 }
 .btn-primary:hover {
-  background: linear-gradient(135deg, #fde047, #facc15);
+  background: linear-gradient(135deg, var(--gold-2), var(--gold));
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 28px rgba(250, 204, 21, 0.45);
 }
 .btn-outline {
-  border: 1.5px solid #facc15;
-  color: #facc15;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
   background: transparent;
 }
 .btn-outline:hover {
-  background: #facc15;
+  background: var(--gold);
   color: #111;
-  box-shadow: 0 6px 20px rgba(250, 204, 21, 0.4);
 }
 
-/* === Cards con effetto vetro === */
+/* === Cards Glass === */
 .card {
   @apply rounded-3xl p-8 transition-all duration-500;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px) saturate(150%);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  box-shadow: var(--shadow);
 }
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.45);
 }
 
-/* === Dark Mode === */
-.dark {
-  background: radial-gradient(circle at 70% 30%, #020617, #000);
-  color: #e5e7eb;
-}
-.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
-  background: linear-gradient(135deg, #fbbf24, #facc15);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.dark a {
-  color: #38bdf8; /* azzurro digitale */
-}
-.dark a:hover {
-  color: #facc15;
-}
-.dark .card {
-  background: rgba(20, 20, 30, 0.75);
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
+/* === Footer === */
+footer {
+  @apply w-full mt-20 py-10 text-center;
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--gold) 10%, transparent));
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--text) 70%, transparent);
 }
