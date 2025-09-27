@@ -625,3 +625,26 @@ html.dark .contact-list .dot{
 }
 .contact-list .value{ color: color-mix(in srgb, var(--ink) 85%, transparent); }
 .contact-list .sep{ margin:0 8px; opacity:.6; }
+/* — Stacking/spacing compattato tra pannelli adiacenti — */
+.stack-tight{ margin-top: clamp(-6px, -1.2vw, -12px); } /* avvicina Contatti alla Modulistica */
+.mod-section{ padding-block: clamp(42px,6vw,80px) clamp(32px,4.5vw,60px); } /* meno spazio sotto */
+.contacts-section{ padding-block: clamp(32px,4.5vw,60px) clamp(48px,6vw,80px); }
+
+/* — Stessa larghezza per entrambi i pannelli — */
+.surface--xl{ width:min(920px, 100%); margin:0 auto; }
+.surface--md{ width:min(920px, 100%); margin:0 auto; }
+
+/* — Provider chip: centratura perfetta + sottotitolo tenue — */
+.k-providers{ justify-items:center; }
+.chip{
+  position:relative; text-align:center;
+}
+.chip-sub{
+  display:block; font-size:.78rem; font-weight:500; opacity:.75; margin-top:2px;
+  color: color-mix(in srgb, var(--ink) 66%, transparent);
+}
+
+/* — Contact list centrata con ritmo più fitto — */
+.contact-list{ margin:14px auto 0; display:grid; gap:8px; max-width:720px; text-align:left; }
+.contact-list .row{ display:grid; grid-template-columns:28px 1fr; align-items:center; gap:12px; }
+.contact-list .value{ color: color-mix(in srgb, var(--ink) 86%, transparent); }
