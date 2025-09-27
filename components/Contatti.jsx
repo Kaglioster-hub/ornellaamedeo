@@ -31,34 +31,65 @@ export default function Contatti() {
             </ul>
           </div>
 
-          {/* Mediazione & Consulenza fiscale */}
+          {/* Pannello con due sotto-card: Consulenza fiscale e Mediazione (ADR Europa) */}
           <div className="contacts-card">
-            <h3 className="contacts-h">Mediazione &amp; Consulenza fiscale</h3>
-            <ul className="contact-list">
-              <li className="row">
-                <span className="dot" aria-hidden="true">📍</span>
-                <div className="value">Via Terenzio 21, int. 2 – sc. B – Roma</div>
-              </li>
-              <li className="row">
-                <span className="dot" aria-hidden="true">☎️</span>
-                <div className="value">
-                  <a className="link-quiet" href="tel:+390645542099">06&nbsp;45542099</a>
-                </div>
-              </li>
-              <li className="row">
-                <span className="dot" aria-hidden="true">✉️</span>
-                <div className="value">
-                  <a className="link-quiet" href="mailto:studio.amedeo@associationline.it">studio.amedeo@associationline.it</a>
-                  <span className="sep"> · </span>
-                  <a className="link-quiet" href="mailto:segreteria@adreuropa.it">segreteria@adreuropa.it</a>
-                  <div className="muted">PEC: <a className="link-quiet" href="mailto:adr@pec.adreuropa.it">adr@pec.adreuropa.it</a></div>
-                </div>
-              </li>
-            </ul>
+            <div className="subgrid">
+              {/* Consulenza fiscale */}
+              <div className="subcard">
+                <h4 className="subh">Consulenza fiscale</h4>
+                <ul className="contact-list">
+                  <li className="row">
+                    <span className="dot" aria-hidden="true">📍</span>
+                    <div className="value">Via Terenzio 21, int. 2 – sc. B – Roma</div>
+                  </li>
+                  <li className="row">
+                    <span className="dot" aria-hidden="true">☎️</span>
+                    <div className="value">
+                      <a className="link-quiet" href="tel:+390637518763">06&nbsp;37518763</a>
+                      <span className="sep"> · </span>
+                      <a className="link-quiet" href="tel:+393914212950">391&nbsp;421&nbsp;2950</a>
+                    </div>
+                  </li>
+                  <li className="row">
+                    <span className="dot" aria-hidden="true">✉️</span>
+                    <div className="value">
+                      <a className="link-quiet" href="mailto:studio.amedeo@associationline.it">studio.amedeo@associationline.it</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Mediazione (ADR Europa) */}
+              <div className="subcard">
+                <h4 className="subh">
+                  Mediazione <span className="badge">ADR Europa</span>
+                </h4>
+                <ul className="contact-list">
+                  <li className="row">
+                    <span className="dot" aria-hidden="true">📍</span>
+                    <div className="value">Via Terenzio 21, int. 2 – sc. B – Roma</div>
+                  </li>
+                  <li className="row">
+                    <span className="dot" aria-hidden="true">☎️</span>
+                    <div className="value">
+                      <a className="link-quiet" href="tel:+390645542099">06&nbsp;45542099</a>
+                    </div>
+                  </li>
+                  <li className="row">
+                    <span className="dot" aria-hidden="true">✉️</span>
+                    <div className="value">
+                      <a className="link-quiet" href="mailto:segreteria@adreuropa.it">segreteria@adreuropa.it</a>
+                      <div className="muted">
+                        PEC: <a className="link-quiet" href="mailto:adr@pec.adreuropa.it">adr@pec.adreuropa.it</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Altri recapiti utili (se vuoi lasciarli) */}
         <div className="text-center k-note mt-4">
           PEC personale: dott.ornella.amedeo@pecodcec.roma.it
         </div>

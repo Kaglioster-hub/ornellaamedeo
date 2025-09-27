@@ -750,3 +750,35 @@ html.nav-open, body.nav-open{ overflow:hidden; }   /* blocca scroll quando menu 
   box-shadow:0 14px 28px rgba(37,211,102,.45);
   filter:saturate(115%);
 }
+/* sotto-card affiancate nel pannello destro */
+.subgrid{
+  display:grid; gap:12px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 780px){
+  .subgrid{ grid-template-columns: 1fr 1fr; }
+}
+.subcard{
+  background: color-mix(in srgb, var(--panel) 96%, transparent);
+  border:1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+}
+.subh{
+  font-weight: 700;
+  margin: 2px 0 10px;
+  color: color-mix(in srgb, var(--gold) 90%, var(--ink));
+}
+.badge{
+  display:inline-block; font-size:.78rem; font-weight:700; letter-spacing:.2px;
+  margin-left:8px; padding:3px 8px; border-radius:999px;
+  background: color-mix(in srgb, var(--link) 22%, transparent);
+  color: color-mix(in srgb, var(--ink) 90%, transparent);
+  border:1px solid color-mix(in srgb, var(--link) 30%, transparent);
+}
+
+/* piccoli ritocchi per lettura */
+.contact-list .value, .contact-list .value a{
+  overflow-wrap:anywhere; word-break:break-word;
+}
