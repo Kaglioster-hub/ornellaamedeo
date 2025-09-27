@@ -684,3 +684,57 @@ html.dark .contact-list .dot{
 
 /* Piccolo allineamento tipografico */
 .section-title{text-wrap:balance}
+/* ======= NAV RESPONSIVE ======= */
+:root{ --nav-h: 76px; }
+@media (max-width: 860px){ :root{ --nav-h: 64px; } }
+
+html{ scroll-padding-top: var(--nav-h); }         /* evita copertura ancore */
+header.site .inner{ height: var(--nav-h); }      /* coerente con var */
+
+header.site{
+  position: sticky; top:0; z-index: 60;
+  background: linear-gradient(180deg, rgba(14,21,38,.70), rgba(14,21,38,0)) padding-box;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+.primary-nav{ display:flex; gap:14px; margin-left:auto; }
+.nav-btn{ display:none; margin-left:auto; align-items:center; gap:8px;
+  padding:8px 12px; border:1px solid var(--border); border-radius:12px;
+  background: color-mix(in srgb, var(--bg-2) 80%, transparent); cursor:pointer; }
+
+@media (max-width: 980px){
+  .primary-nav{ display:none; }      /* nasconde link desktop */
+  .nav-btn{ display:flex; }          /* mostra hamburger */
+}
+
+/* Drawer mobile */
+.mobile-panel{
+  position: fixed; left:0; right:0; top: var(--nav-h); z-index: 55;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--panel) 96%, transparent), color-mix(in srgb, var(--panel) 90%, transparent));
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 24px 64px -20px rgba(0,0,0,.38);
+  transform: translateY(-12px); opacity:0; pointer-events:none;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.mobile-panel.open{ transform:none; opacity:1; pointer-events:auto; }
+.mobile-nav{ display:grid; gap:6px; padding:14px; }
+.mobile-nav a{
+  padding:12px 10px; border-radius:12px; text-decoration:none; color:var(--ink);
+  border:1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-2) 85%, transparent);
+}
+html.nav-open, body.nav-open{ overflow:hidden; }   /* blocca scroll quando menu aperto */
+
+/* ======= CARD/CONTENUTI MOBILE FIX ======= */
+.surface--xl{ width:min(920px, 100%); margin:0 auto; }
+@media (max-width: 640px){
+  .surface--xl{ padding:16px 14px !important; border-radius:16px; }
+  .card{ box-shadow: var(--shadow-sm); }
+}
+
+/* Wrapping sicuro di email/pec/telefono */
+.contact-list .value, .contact-list .value a{ overflow-wrap:anywhere; word-break:break-word; }
+
+/* Modulistica provider centrati già gestiti */
+/* Popup servizi width mobile già gestito */
