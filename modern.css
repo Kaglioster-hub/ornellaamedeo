@@ -278,3 +278,116 @@ html[data-theme="dark"] .mail-providers a{
   width:34px; height:34px; cursor:pointer; color:var(--ink)
 }
 .modal__close:hover{ background:#ffffff15 }
+/* ===== 2050 THEME – aurora glass, micro-glow, strokes sottili ===== */
+:root{
+  --bg:#0b1020;
+  --bg-2:#070c1a;
+  --ink:#eaf0ff;
+  --muted:#a9b4ca;
+  --gold:#eaca76;          /* titoli */
+  --gold-2:#ffe8a8;
+  --link:#7fd1ff;
+  --ring:#7fd1ff66;
+  --border:#ffffff22;
+  --panel:#0e1528cc;
+  --radius:18px;
+}
+html[data-theme="light"]{
+  --bg:#f6f8ff; --bg-2:#ffffff; --ink:#12131a; --muted:#6b7285;
+  --link:#2f88ff; --panel:#ffffffcc; --border:#0b102015;
+}
+
+/* sfondo aurora */
+body{
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 600px at 15% -10%, #0f1d3f 10%, transparent 60%),
+    radial-gradient(900px 500px at 85% 0%, #0c2347 10%, transparent 60%),
+    conic-gradient(from 210deg at 50% 10%, #0b142e, #0c1532, #0a1226, #0b142e);
+}
+
+/* navbar vetro con bordo luminoso */
+.site{
+  background:
+    linear-gradient(180deg, rgba(20,28,50,.55), rgba(20,28,50,0)) padding-box,
+    linear-gradient(180deg, #ffffff2a, #0000) border-box !important;
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+}
+.site nav a{
+  color:var(--muted);
+  border:1px solid transparent;
+  border-radius:12px;
+  background:transparent;
+}
+.site nav a:hover{
+  color:var(--ink); background:#ffffff12; border-color:#ffffff22;
+}
+
+/* card vetro + edge glow */
+.card{
+  background:linear-gradient(180deg, color-mix(in srgb, var(--panel) 96%, transparent), color-mix(in srgb, var(--panel) 88%, transparent));
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:
+    0 20px 60px -18px rgba(0,0,0,.55),
+    inset 0 1px 0 #ffffff10;
+}
+
+/* titoli “oro” più luminosi */
+.section-title, h1, h2{
+  background:linear-gradient(135deg, var(--gold-2), var(--gold));
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  text-shadow:0 2px 16px rgba(255,225,140,.15);
+}
+
+/* bottoni 2050: doppio background + stroke 1px */
+.btn{
+  position:relative;
+  border:1px solid color-mix(in srgb, #fff 28%, transparent);
+  border-radius:14px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, #ffffff 14%, transparent), transparent) padding-box,
+    linear-gradient(90deg, #7fd1ff, #a1f0ff) border-box;
+  color:var(--ink);
+  box-shadow:0 10px 24px rgba(0,0,0,.25), inset 0 1px 0 #ffffff22;
+}
+html[data-theme="light"] .btn{
+  border:1px solid color-mix(in srgb, #0a0a0a 18%, transparent);
+  background:
+    linear-gradient(180deg, #ffffff, #f7f9ff) padding-box,
+    linear-gradient(90deg, #7fd1ff, #a1f0ff) border-box;
+}
+.btn-primary{
+  background:
+    linear-gradient(180deg, color-mix(in srgb, #ffecc2 25%, transparent), transparent) padding-box,
+    linear-gradient(90deg, #ffd36b, #ffe69e) border-box;
+  color:#0a0f1c;
+  filter:contrast(1.05) saturate(1.03);
+}
+.btn:hover{ transform:translateY(-1px); box-shadow:0 16px 36px rgba(0,0,0,.35) }
+
+/* chip provider email – più moderni */
+.mail-providers a{
+  background:linear-gradient(180deg, color-mix(in srgb, #ffffff15, transparent), transparent);
+  border:1px solid #ffffff30;
+  box-shadow:0 8px 22px rgba(0,0,0,.28), inset 0 1px 0 #ffffff22;
+}
+html[data-theme="light"] .mail-providers a{
+  background:linear-gradient(180deg, #ffffff, #f6f8ff);
+  border:1px solid #0b102015;
+}
+
+/* bande sezione più “aurora” */
+.band--dark{
+  background:
+    radial-gradient(600px 280px at 50% -10%, #0f2c5a40, transparent 70%),
+    linear-gradient(180deg, #0a0f1c, #070b14);
+}
+.band--light{
+  background:
+    radial-gradient(600px 280px at 50% -10%, #ffd36b20, transparent 70%),
+    var(--bg-2);
+  color:#111827;
+}
