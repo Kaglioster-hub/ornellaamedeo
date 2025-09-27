@@ -655,3 +655,32 @@ html.dark .contact-list .dot{
 
 /* Contatti ancora più centrati (max-width + margin auto già presenti) */
 .contacts-section .surface--xl{ margin-left:auto; margin-right:auto; }
+/* Contatti in due colonne */
+.contacts-grid{
+  display:grid;
+  grid-template-columns: repeat(1, minmax(0,1fr));
+  gap:18px;
+  max-width: 980px;
+  margin: 18px auto 0;
+}
+@media (min-width: 860px){
+  .contacts-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+.contacts-card{
+  background: var(--panel);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding:18px 18px 14px;
+  box-shadow: var(--shadow-sm);
+}
+.contacts-h{
+  font-weight: 700;
+  margin: 2px 0 10px;
+  color: color-mix(in srgb, var(--gold) 85%, var(--ink));
+}
+.contact-list{ display:grid; gap:10px; }
+.contact-list .row{ display:grid; grid-template-columns:26px 1fr; align-items:center; gap:12px; }
+.muted{ font-size:.9rem; opacity:.8; margin-top:4px; }
+
+/* Piccolo allineamento tipografico */
+.section-title{text-wrap:balance}

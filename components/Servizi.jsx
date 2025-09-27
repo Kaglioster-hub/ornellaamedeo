@@ -4,28 +4,27 @@ const servizi = [
   {
     icon: "📑",
     titolo: "Consulenza legale",
-    telefono: "0637518763",
-    email: "studio.amedeo@gmail.com",
+    telefono: "3914212950",                    // cellulare
+    email: "o.amedeo@associationline.it",
   },
   {
     icon: "📊",
     titolo: "Consulenza fiscale e contabile",
-    telefono: "0637518763",
-    email: "studio.amedeo@gmail.com",
+    telefono: "0637518763",                    // lasciamo il fisso
+    email: "studio.amedeo@associationline.it", // mail aggiornata
   },
   {
     icon: "⚖️",
     titolo: "Mediazione e arbitrato",
-    telefono: "0637518763",
+    telefono: "0645542099",                    // numero per mediazione
     email: "segreteria@adreuropa.it",
-    email2: "o.amedeo@associationline.it",
+    email2: "adr@pec.adreuropa.it",            // PEC aggiunta
   },
   {
     icon: "🎓",
     titolo: "Formazione ADR",
     telefono: "0645542099",
     email: "segreteria@adreuropa.it",
-    email2: "o.amedeo@associationline.it",
   },
 ];
 
@@ -58,7 +57,6 @@ export default function Servizi() {
         ))}
       </div>
 
-      {/* Popup */}
       {popup && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
           <div className="bg-brandWhite rounded-2xl shadow-2xl p-8 max-w-sm text-center">
@@ -84,7 +82,7 @@ export default function Servizi() {
               </a>
             )}
 
-            {/* Email secondaria (solo per Formazione ADR) */}
+            {/* Email secondaria (es. PEC per mediazione) */}
             {popup.email2 && (
               <a
                 href={`mailto:${popup.email2}`}
@@ -94,7 +92,6 @@ export default function Servizi() {
               </a>
             )}
 
-            {/* Bottone chiudi */}
             <button
               onClick={() => setPopup(null)}
               className="mt-4 text-sm text-brandGray underline hover:text-brandBlack"
@@ -107,4 +104,3 @@ export default function Servizi() {
     </section>
   );
 }
-
