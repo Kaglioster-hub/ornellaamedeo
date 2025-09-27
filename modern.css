@@ -566,3 +566,62 @@ html[data-theme="dark"] .chip{
 
 /* separa visivamente dalla sezione successiva */
 .mod-section + .section{ padding-top: clamp(48px,6vw,80px); }
+/* ===== Surfaces & Type – raffinati ===== */
+.surface{
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--panel) 96%, transparent),
+    color-mix(in srgb, var(--panel) 90%, transparent));
+  border:1px solid var(--border);
+  border-radius:20px;
+  box-shadow:0 24px 64px -20px rgba(0,0,0,.38), inset 0 1px 0 #ffffff18;
+}
+.surface--xl{ width:min(920px,100%); margin:0 auto; padding:clamp(22px,4.5vw,44px) clamp(18px,4vw,40px); }
+.surface--md{ width:min(820px,100%); margin:0 auto; padding:clamp(22px,4vw,40px) clamp(18px,3.6vw,36px); }
+
+.k-lead{ color:color-mix(in srgb, var(--ink) 78%, transparent); margin:10px auto 2px; max-width:720px; line-height:1.6; }
+.k-note{ color:color-mix(in srgb, var(--ink) 70%, transparent); margin:0 auto 18px; font-size:.95rem; }
+.link-quiet{ color: color-mix(in srgb, var(--link) 82%, var(--ink) 18%); text-underline-offset:3px; text-decoration-thickness:1.5px; }
+.link-quiet:hover{ color: var(--link); }
+
+/* CTA + provider */
+.k-cta{ margin:12px 0 14px; }
+.btn-lg{ padding:14px 20px; font-size:1rem; border-radius:14px; }
+
+.k-providers{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr));
+  gap:12px; margin-top:10px;
+}
+.chip{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  height:44px; padding:0 14px; border-radius:12px; font-weight:600; text-decoration:none;
+  background:color-mix(in srgb, var(--bg-2) 88%, transparent);
+  border:1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  box-shadow:0 6px 16px rgba(0,0,0,.12), inset 0 1px 0 #ffffff22;
+  transition:transform .15s ease, box-shadow .15s ease, background-color .2s ease;
+}
+html.dark .chip{ background:color-mix(in srgb, #0f1a30 88%, transparent); border:1px solid #ffffff2b; }
+.chip:hover{ transform:translateY(-1px); box-shadow:0 12px 28px rgba(0,0,0,.25) }
+.chip .ico{ font-size:18px; line-height:1 }
+
+/* Modulistica spacing */
+.mod-section{ padding-block:clamp(52px,7vw,100px); }
+.mod-section + .contacts-section{ padding-top: clamp(48px,6vw,80px); }
+
+/* Contatti layout pulito */
+.contacts-section{ padding-block:clamp(52px,7vw,100px); }
+.contact-list{ margin-top:14px; display:grid; gap:10px; }
+.contact-list .row{
+  display:grid; grid-template-columns:26px 1fr; align-items:center; gap:12px;
+  justify-items:start;
+}
+.contact-list .dot{
+  width:26px; height:26px; display:grid; place-items:center; border-radius:8px;
+  background:color-mix(in srgb, var(--bg-2) 80%, transparent);
+  border:1px solid color-mix(in srgb, var(--ink) 16%, transparent);
+}
+html.dark .contact-list .dot{
+  background:color-mix(in srgb, #101a34 80%, transparent);
+  border:1px solid #ffffff22;
+}
+.contact-list .value{ color: color-mix(in srgb, var(--ink) 85%, transparent); }
+.contact-list .sep{ margin:0 8px; opacity:.6; }

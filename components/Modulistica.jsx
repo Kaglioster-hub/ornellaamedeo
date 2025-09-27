@@ -10,25 +10,25 @@ export default function Modulistica() {
   const hrefMailto     = `mailto:${to}?subject=${subject}&body=${body}`;
 
   return (
-    <div className="mod-section">
-      <div className="mod-panel card">
+    <section className="mod-section">
+      <div className="card surface surface--xl text-center">
         <h2 className="section-title">Modulistica</h2>
 
-        <p className="mod-lead">
+        <p className="k-lead">
           Invia una richiesta: ti risponderemo con i moduli corretti.
         </p>
-        <p className="mod-note">
+        <p className="k-note">
           (per la <strong>mediazione</strong> usa la sezione dedicata&nbsp;
-          <a className="link" href="#adr">ADR Europa</a>)
+          <a className="link-quiet" href="#adr">ADR Europa</a>)
         </p>
 
-        <div className="mod-cta">
+        <div className="k-cta">
           <a href={hrefMailto} className="btn btn-primary btn-lg">
             Invia una mail alla segreteria
           </a>
         </div>
 
-        <div className="mod-providers" aria-label="Scegli il tuo servizio di posta">
+        <div className="k-providers" aria-label="Scegli il tuo servizio di posta">
           <a href={hrefGmail} target="_blank" rel="noopener" className="chip">
             <svg className="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="#EA4335" d="M12 13 3 6.75V18a2 2 0 0 0 2 2h3V11l4 3 4-3v9h3a2 2 0 0 0 2-2V6.75z"/>
@@ -51,6 +51,6 @@ export default function Modulistica() {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
