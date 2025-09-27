@@ -391,3 +391,108 @@ html[data-theme="light"] .mail-providers a{
     var(--bg-2);
   color:#111827;
 }
+/* ==== Visual Revamp 2050++ (override) ==== */
+
+/* palette chiare e scure molto distinte */
+:root{
+  --bg:#f6f8ff; --bg-2:#ffffff;
+  --ink:#111318; --muted:#616b7d;
+  --gold:#e7c364; --gold-2:#ffebb0;
+  --link:#2f88ff; --ring:#8ec5ff66;
+  --panel:#ffffffcc; --border:#0b102015;
+}
+:where(html.dark,[data-theme="dark"]){
+  --bg:#070c1a; --bg-2:#0b1224;
+  --ink:#e7ecf8; --muted:#aab4c9;
+  --gold:#eaca76; --gold-2:#ffe8a8;
+  --link:#7fd1ff; --ring:#7fd1ff66;
+  --panel:#0f172ecc; --border:#ffffff22;
+}
+
+/* sfondi più carattere (diversi tra chiaro e scuro) */
+body{
+  background:
+    radial-gradient(900px 480px at 20% -5%, color-mix(in srgb, var(--gold) 12%, transparent), transparent 60%),
+    radial-gradient(880px 460px at 85% 0%, color-mix(in srgb, var(--link) 16%, transparent), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg-2));
+}
+html.dark body{
+  background:
+    radial-gradient(1200px 600px at 15% -10%, #0f1d3f 12%, transparent 60%),
+    radial-gradient(900px 500px at 85% 0%, #0c2347 12%, transparent 60%),
+    linear-gradient(180deg, #050916, #0b1224);
+}
+
+/* navbar glass con contrasto reale tra temi */
+.site{
+  background:
+    linear-gradient(180deg, color-mix(in srgb, #ffffff 78%, transparent), color-mix(in srgb, #ffffff 10%, transparent)) padding-box,
+    linear-gradient(180deg, #0001, #0000) border-box !important;
+  border-bottom:1px solid var(--border);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+html.dark .site{
+  background:
+    linear-gradient(180deg, rgba(12,18,36,.70), rgba(12,18,36,.35)) padding-box,
+    linear-gradient(180deg, #ffffff22, #0000) border-box !important;
+}
+
+/* card/btn: stroke 1px e glow soft */
+.card{
+  border:1px solid var(--border);
+  box-shadow:
+    0 22px 60px -18px rgba(0,0,0,.35),
+    inset 0 1px 0 #ffffff22;
+  border-radius:20px;
+}
+.btn{ border:1px solid color-mix(in srgb, var(--ink) 18%, transparent) }
+html.dark .btn{ border:1px solid #ffffff2b }
+.btn-primary{
+  background:
+    linear-gradient(180deg, color-mix(in srgb, #ffe5a8 25%, transparent), transparent) padding-box,
+    linear-gradient(90deg, #ffd36b, #ffe69e) border-box;
+  color:#0a0f1c;
+}
+
+/* sezioni coerenti e più compatte */
+.container{ max-width:1100px; margin-inline:auto; padding:0 clamp(16px,3vw,28px); }
+.section{ padding-block: clamp(48px, 7vw, 96px); }
+.band--dark{
+  background:
+    radial-gradient(600px 280px at 50% -10%, #0f2c5a40, transparent 70%),
+    linear-gradient(180deg, #0a0f1c, #070b14);
+}
+.band--light{
+  background:
+    radial-gradient(600px 280px at 50% -10%, color-mix(in srgb, var(--gold) 20%, transparent), transparent 70%),
+    var(--bg-2);
+  color:#111827;
+}
+
+/* HERO: centratura perfetta + card glass “narrow” */
+.hero-ctr{ min-height:100svh; display:grid; place-items:center; position:relative; }
+.hero-card{
+  width: min(880px, calc(100% - 32px));
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding: clamp(22px, 5vw, 56px);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--panel) 95%, transparent), color-mix(in srgb, var(--panel) 86%, transparent));
+  box-shadow: 0 28px 80px -20px rgba(0,0,0,.45), inset 0 1px 0 #ffffff18;
+}
+.hero-title{
+  margin: 10px 0 0;
+  font-weight: 800;
+  letter-spacing: .2px;
+  font-size: clamp(36px, 5.2vw, 62px);
+  background: linear-gradient(135deg, var(--gold-2), var(--gold));
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  text-shadow: 0 2px 16px rgba(255,225,140,.18);
+}
+.hero-sub{ margin-top: 12px; color: var(--muted); }
+
+/* scroll hint più visibile su dark */
+.scroll-hint{ color: color-mix(in srgb, var(--ink) 50%, transparent); }
+html.dark .scroll-hint{ color:#cdd6f730 }
