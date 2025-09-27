@@ -200,3 +200,81 @@ input[type="submit"]:hover{transform:translateY(-1px);box-shadow:var(--shadow-lg
 .band .desc{ color:var(--muted); max-width:780px; margin:0 auto 20px; }
 .band .link{ color:var(--link); text-underline-offset:3px; text-decoration-thickness:1.5px; }
 .band .link:hover{ color:var(--gold); }
+/* === Buttons: contrasto e leggibilità === */
+.btn{
+  border:1px solid color-mix(in srgb, var(--ink) 18%, transparent); /* bordo sottile, più contrasto */
+}
+html[data-theme="dark"] .btn{
+  border:1px solid color-mix(in srgb, #fff 28%, transparent);
+}
+
+/* primario più leggibile */
+.btn-primary{
+  background:linear-gradient(90deg, #e8b73a, #ffd966); /* oro leggermente più caldo/chiaro */
+  color:#12131a;
+  filter:contrast(1.03) saturate(1.02);
+}
+.btn-primary:hover{ filter:brightness(.98) contrast(1.05) }
+
+/* chip per provider email */
+.mail-providers{
+  display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:12px;
+}
+.mail-providers a{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 12px; border-radius:12px; text-decoration:none; font-weight:600;
+  background:color-mix(in srgb, var(--bg-2) 85%, transparent);
+  border:1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  transition:transform .15s ease, box-shadow .15s ease, background-color .2s ease;
+}
+html[data-theme="dark"] .mail-providers a{
+  background:color-mix(in srgb, #0f1a30 85%, transparent);
+  border:1px solid #ffffff2b;
+}
+.mail-providers a:hover{ transform:translateY(-1px); box-shadow:0 10px 24px rgba(0,0,0,.20) }
+.mail-providers .ico{ font-size:18px; line-height:1 }
+/* — Bottoni: bordo sottile ad alto contrasto + oro più leggibile — */
+.btn{ border:1px solid color-mix(in srgb, var(--ink) 18%, transparent) }
+html[data-theme="dark"] .btn{ border:1px solid color-mix(in srgb, #fff 28%, transparent) }
+.btn-primary{
+  background:linear-gradient(90deg, #e8b73a, #ffd966);
+  color:#12131a; filter:contrast(1.03) saturate(1.02);
+}
+.btn-primary:hover{ filter:brightness(.98) contrast(1.05) }
+
+/* — Chip provider email — */
+.mail-providers{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:12px }
+.mail-providers a{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 12px; border-radius:12px; font-weight:600; text-decoration:none;
+  background:color-mix(in srgb, var(--bg-2) 85%, transparent);
+  border:1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  transition:transform .15s ease, box-shadow .15s ease, background-color .2s ease;
+}
+html[data-theme="dark"] .mail-providers a{
+  background:color-mix(in srgb, #0f1a30 85%, transparent);
+  border:1px solid #ffffff2b;
+}
+.mail-providers a:hover{ transform:translateY(-1px); box-shadow:0 10px 24px rgba(0,0,0,.20) }
+.mail-providers .ico{ font-size:18px; line-height:1 }
+
+/* — Modal minimale accessibile — */
+.modal{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:1000 }
+.modal.is-open{ display:flex }
+.modal__backdrop{
+  position:fixed; inset:0; background:rgba(0,0,0,.45); backdrop-filter:blur(2px);
+}
+.modal__card{
+  position:relative; width:min(560px, calc(100% - 32px));
+  background:var(--panel); border:1px solid var(--border); border-radius:16px;
+  padding:20px; box-shadow:0 22px 60px -12px rgba(0,0,0,.45);
+}
+.modal__head{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:6px }
+.modal__title{ margin:0; font-family:"Playfair Display",serif; font-size:22px }
+.modal__close{
+  appearance:none; border:1px solid var(--border); border-radius:10px; background:transparent;
+  width:34px; height:34px; cursor:pointer; color:var(--ink)
+}
+.modal__close:hover{ background:#ffffff15 }
