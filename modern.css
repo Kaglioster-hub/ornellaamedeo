@@ -648,3 +648,10 @@ html.dark .contact-list .dot{
 .contact-list{ margin:14px auto 0; display:grid; gap:8px; max-width:720px; text-align:left; }
 .contact-list .row{ display:grid; grid-template-columns:28px 1fr; align-items:center; gap:12px; }
 .contact-list .value{ color: color-mix(in srgb, var(--ink) 86%, transparent); }
+/* Chip: icona + label uniformi */
+.k-providers{ justify-items:center; }
+.chip{ display:inline-flex; align-items:center; gap:9px; }
+.chip .ico{ width:18px; height:18px; display:inline-block; }
+
+/* Contatti ancora più centrati (max-width + margin auto già presenti) */
+.contacts-section .surface--xl{ margin-left:auto; margin-right:auto; }
