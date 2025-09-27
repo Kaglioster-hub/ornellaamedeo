@@ -978,3 +978,84 @@ html.nav-open, body.nav-open{ overflow:hidden; }   /* blocca scroll quando menu 
 .chip-link:hover{ transform:translateY(-1px); box-shadow: 0 12px 24px -10px rgba(0,0,0,.30); }
 .chip-link--wa{ color:#1a8f4b; background:#eafaf1; border-color:#c7f0d7; box-shadow: 0 6px 16px -8px rgba(37,211,102,.38); }
 .chip-link--wa:hover{ box-shadow: 0 12px 26px -10px rgba(37,211,102,.48); }
+/* Contatti – surface più elegante */
+.c-surface{
+  background:
+    radial-gradient(600px 220px at 50% 0%, color-mix(in srgb, var(--gold) 6%, transparent), transparent 70%) padding-box,
+    color-mix(in srgb, var(--panel) 94%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px -24px rgba(0,0,0,.35);
+}
+
+/* Titolo grande a gradiente tenue */
+.c-title-xl{
+  background: linear-gradient(120deg, color-mix(in srgb, var(--gold) 85%, #fff), color-mix(in srgb, var(--gold-2) 65%, #fff));
+  -webkit-background-clip: text; background-clip:text; -webkit-text-fill-color: transparent;
+}
+
+/* Griglia 3 colonne responsive + equal height */
+.cards-3{ display:grid; gap:16px; margin-top:14px; grid-template-columns: 1fr; }
+@media (min-width: 960px){ .cards-3{ grid-template-columns: repeat(3, minmax(0,1fr)); } }
+.c-equal > .c-card{ display:flex; flex-direction:column; }
+
+/* Card stile glass */
+.c-card{
+  min-width:0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.55)) padding-box;
+  border:1px solid color-mix(in srgb, var(--border) 70%, #fff3);
+  border-radius:16px;
+  padding:18px 16px;
+  box-shadow: 0 10px 28px -14px rgba(0,0,0,.35);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+}
+[data-theme="dark"] .c-card{
+  background: linear-gradient(180deg, rgba(18,24,40,.7), rgba(18,24,40,.55)) padding-box;
+}
+
+/* Titoli card */
+.c-title{
+  font-weight: 800; letter-spacing:.2px; margin:2px 0 12px;
+  color: color-mix(in srgb, var(--gold) 92%, var(--ink));
+}
+.c-badge{
+  margin-left:8px; padding:3px 8px; border-radius:999px;
+  font-size:.78rem; font-weight:700;
+  background: color-mix(in srgb, var(--link) 22%, transparent);
+  border:1px solid color-mix(in srgb, var(--link) 28%, transparent);
+}
+
+/* Lista */
+.c-list{ display:grid; gap:10px; margin-top:2px; }
+.c-row{
+  display:grid; grid-template-columns: 34px 1fr; gap:10px; align-items:center;
+}
+.c-row div, .c-row a{ overflow-wrap:anywhere; word-break:break-word; }
+
+/* Icona in pill (cerchio) */
+.pill{
+  width:30px; height:30px; display:grid; place-items:center;
+  border-radius:999px;
+  background: color-mix(in srgb, var(--bg-2) 80%, transparent);
+  border:1px solid var(--border);
+  box-shadow: inset 0 0 0 1px #ffffff14;
+}
+.pill--wa{ background:#eafaf1; border-color:#c7f0d7; }
+
+/* SVG uniformi */
+.ico{ width:18px; height:18px; color: color-mix(in srgb, var(--ink) 88%, transparent); }
+
+/* Link a chip (tel/mail/wa) */
+.chip-link{
+  display:inline-block; padding:6px 10px; border-radius:999px;
+  border:1px solid color-mix(in srgb, var(--border) 75%, #0000);
+  background: color-mix(in srgb, var(--bg-2) 86%, transparent);
+  text-decoration:none; color:var(--link); font-weight:600;
+  transition:transform .15s ease, box-shadow .15s ease, background-color .2s ease;
+  box-shadow: 0 6px 14px -8px rgba(0,0,0,.25);
+}
+.chip-link:hover{ transform:translateY(-1px); box-shadow: 0 12px 24px -10px rgba(0,0,0,.30); }
+.chip-link--wa{ color:#1a8f4b; background:#eafaf1; border-color:#c7f0d7; box-shadow: 0 6px 16px -8px rgba(37,211,102,.38); }
+.chip-link--wa:hover{ box-shadow: 0 12px 26px -10px rgba(37,211,102,.48); }
