@@ -496,3 +496,23 @@ html.dark .btn{ border:1px solid #ffffff2b }
 /* scroll hint più visibile su dark */
 .scroll-hint{ color: color-mix(in srgb, var(--ink) 50%, transparent); }
 html.dark .scroll-hint{ color:#cdd6f730 }
+/* --- HERO center fix (navbar sticky) --- */
+:root{ --nav-h: 76px; }                 /* altezza navbar */
+@media (max-width:640px){ :root{ --nav-h: 64px; } }
+
+.hero-ctr{ 
+  min-height: calc(100svh - var(--nav-h));  /* centra nell'area sotto la navbar */
+}
+.hero-ctr .container{
+  display: grid;
+  place-items: center;                     /* centraggio orizzontale+verticale del contenuto */
+}
+.hero-card{ 
+  margin: 0 auto;                          /* sicurezza: centrato anche orizzontalmente */
+}
+
+/* offset per link #ancora (evita che i titoli finiscano sotto la navbar) */
+:target { scroll-margin-top: calc(var(--nav-h) + 12px); }
+
+/* coerentizza la navbar con la variabile */
+header.site .inner{ height: var(--nav-h); }
