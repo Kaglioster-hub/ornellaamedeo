@@ -738,3 +738,15 @@ html.nav-open, body.nav-open{ overflow:hidden; }   /* blocca scroll quando menu 
 
 /* Modulistica provider centrati già gestiti */
 /* Popup servizi width mobile già gestito */
+/* WhatsApp button */
+.btn-whatsapp{
+  background:#25D366; color:#0b1220;
+  box-shadow:0 8px 18px rgba(37,211,102,.35);
+  transition:transform .15s ease, box-shadow .15s ease, filter .2s ease;
+  text-decoration:none;
+}
+.btn-whatsapp:hover{
+  transform:translateY(-1px);
+  box-shadow:0 14px 28px rgba(37,211,102,.45);
+  filter:saturate(115%);
+}
