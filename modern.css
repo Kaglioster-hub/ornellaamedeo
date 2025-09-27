@@ -782,3 +782,37 @@ html.nav-open, body.nav-open{ overflow:hidden; }   /* blocca scroll quando menu 
 .contact-list .value, .contact-list .value a{
   overflow-wrap:anywhere; word-break:break-word;
 }
+/* 3 cards layout */
+.cards-3{
+  display:grid; gap:16px; margin-top:14px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 860px){ .cards-3{ grid-template-columns: repeat(3, minmax(0,1fr)); } }
+
+.c-card{
+  background: var(--panel);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px 16px 14px;
+  box-shadow: var(--shadow-sm);
+  min-width:0;
+}
+.c-title{
+  font-weight:800; letter-spacing:.2px; margin:4px 0 10px;
+  color: color-mix(in srgb, var(--gold) 90%, var(--ink));
+}
+.c-badge{
+  margin-left:8px; padding:3px 8px; border-radius:999px;
+  font-size:.78rem; font-weight:700;
+  background: color-mix(in srgb, var(--link) 22%, transparent);
+  border:1px solid color-mix(in srgb, var(--link) 30%, transparent);
+}
+.c-list{ display:grid; gap:10px; }
+.c-row{ display:grid; grid-template-columns:24px 1fr; gap:10px; align-items:baseline; }
+.c-row .wa{ color:#25D366; font-weight:600; }
+
+/* Icone uniformi */
+.ico{ width:18px; height:18px; color: color-mix(in srgb, var(--ink) 90%, transparent); }
+
+/* Sicurezza wrapping */
+.c-row a, .c-row div{ overflow-wrap:anywhere; word-break:break-word; }
