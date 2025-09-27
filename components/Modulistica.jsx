@@ -46,7 +46,7 @@ export default function Modulistica() {
           </a>
 
           <a href={hrefMailto} className="chip" aria-label="Scrivi con un client di posta">
-            <!-- icona 'client' stile Thunderbird semplificata -->
+            {/* icona 'client' stile Thunderbird semplificata  */}
             <svg className="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 2a10 10 0 1 0 10 10A10.012 10.012 0 0 0 12 2Zm5.2 7.6-4.78 3.6a1.8 1.8 0 0 1-2.84 0L4.8 9.6a.7.7 0 0 1 .84-1.12l4.78 3.6a.4.4 0 0 0 .56 0l4.78-3.6a.7.7 0 1 1 .84 1.12Z" fill="currentColor"/>
             </svg>
@@ -58,3 +58,4 @@ export default function Modulistica() {
     </section>
   );
 }
+
